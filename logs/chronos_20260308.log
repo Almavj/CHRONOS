@@ -1,0 +1,58 @@
+2026-03-08 08:16:58,273 - chronos.data.pipeline.kafka_consumer - WARNING - Kafka not available. Using mock consumer.
+2026-03-08 08:16:58,277 - chronos.data.collectors.elasticsearch_client - WARNING - Elasticsearch not available
+2026-03-08 08:16:58,284 - chronos.data.pipeline.kafka_producer - WARNING - Kafka not available. Using mock producer.
+2026-03-08 08:17:10,349 - chronos.data.pipeline.kafka_consumer - WARNING - Kafka not available. Using mock consumer.
+2026-03-08 08:17:10,350 - chronos.data.collectors.elasticsearch_client - WARNING - Elasticsearch not available
+2026-03-08 08:17:10,353 - chronos.data.pipeline.kafka_producer - WARNING - Kafka not available. Using mock producer.
+2026-03-08 08:17:25,458 - chronos.data.pipeline.kafka_consumer - WARNING - Kafka not available. Using mock consumer.
+2026-03-08 08:17:25,459 - chronos.data.collectors.elasticsearch_client - WARNING - Elasticsearch not available
+2026-03-08 08:17:25,461 - chronos.data.pipeline.kafka_producer - WARNING - Kafka not available. Using mock producer.
+2026-03-08 08:17:34,975 - chronos.data.pipeline.kafka_consumer - WARNING - Kafka not available. Using mock consumer.
+2026-03-08 08:17:34,977 - chronos.data.collectors.elasticsearch_client - WARNING - Elasticsearch not available
+2026-03-08 08:17:34,980 - chronos.data.pipeline.kafka_producer - WARNING - Kafka not available. Using mock producer.
+2026-03-08 08:17:34,980 - chronos.core.analytics.graph - INFO - Graph initialized with sample data
+2026-03-08 08:18:19,709 - chronos.data.pipeline.kafka_consumer - WARNING - Kafka not available. Using mock consumer.
+2026-03-08 08:18:19,710 - chronos.data.collectors.elasticsearch_client - WARNING - Elasticsearch not available
+2026-03-08 08:18:19,712 - chronos.data.pipeline.kafka_producer - WARNING - Kafka not available. Using mock producer.
+2026-03-08 08:18:19,725 - __main__ - INFO - Generating CHRONOS dashboard...
+2026-03-08 08:18:29,363 - chronos.data.pipeline.kafka_consumer - WARNING - Kafka not available. Using mock consumer.
+2026-03-08 08:18:29,363 - chronos.data.collectors.elasticsearch_client - WARNING - Elasticsearch not available
+2026-03-08 08:18:29,365 - chronos.data.pipeline.kafka_producer - WARNING - Kafka not available. Using mock producer.
+2026-03-08 08:18:29,370 - __main__ - INFO - Running CHRONOS test suite...
+2026-03-08 08:18:29,370 - chronos.tests.test_suite - ERROR - Test test_beaconing_detection failed with exception: minute must be in 0..59
+2026-03-08 08:18:29,375 - chronos.core.analytics.graph - INFO - Graph initialized with sample data
+2026-03-08 08:18:29,376 - chronos.tests.test_suite - INFO - [MOCK] Running Atomic test: Invoke-PhishingLink for T1566
+2026-03-08 08:18:29,377 - chronos.tests.test_suite - INFO - [MOCK] Running Atomic test: PowerShell Encoded Commands for T1059
+2026-03-08 08:19:04,261 - chronos.data.pipeline.kafka_consumer - WARNING - Kafka not available. Using mock consumer.
+2026-03-08 08:19:04,262 - chronos.data.collectors.elasticsearch_client - WARNING - Elasticsearch not available
+2026-03-08 08:19:04,263 - chronos.data.pipeline.kafka_producer - WARNING - Kafka not available. Using mock producer.
+2026-03-08 08:19:04,273 - __main__ - INFO - Running CHRONOS test suite...
+2026-03-08 08:19:04,281 - chronos.core.analytics.graph - INFO - Graph initialized with sample data
+2026-03-08 08:19:04,282 - chronos.tests.test_suite - INFO - [MOCK] Running Atomic test: Invoke-PhishingLink for T1566
+2026-03-08 08:19:04,282 - chronos.tests.test_suite - INFO - [MOCK] Running Atomic test: PowerShell Encoded Commands for T1059
+2026-03-08 08:19:25,276 - chronos.data.pipeline.kafka_consumer - WARNING - Kafka not available. Using mock consumer.
+2026-03-08 08:19:25,279 - chronos.data.collectors.elasticsearch_client - WARNING - Elasticsearch not available
+2026-03-08 08:19:25,281 - chronos.data.pipeline.kafka_producer - WARNING - Kafka not available. Using mock producer.
+2026-03-08 08:19:25,292 - __main__ - INFO - Running CHRONOS test suite...
+2026-03-08 08:19:25,302 - chronos.core.analytics.graph - INFO - Graph initialized with sample data
+2026-03-08 08:19:25,303 - chronos.soar.orchestration.response_orchestrator - WARNING - [MOCK] Isolating host: WS-001
+2026-03-08 08:19:25,303 - chronos.soar.orchestration.response_orchestrator - WARNING - [MOCK] Notifying SOC about: C2 Beaconing Detected
+2026-03-08 08:19:25,303 - chronos.soar.orchestration.response_orchestrator - WARNING - [MOCK] Escalating alert: C2 Beaconing Detected
+2026-03-08 08:19:25,303 - chronos.soar.orchestration.response_orchestrator - INFO - Executed 3 response actions for alert: C2 Beaconing Detected
+2026-03-08 08:19:25,303 - chronos.tests.test_suite - INFO - [MOCK] Running Atomic test: Invoke-PhishingLink for T1566
+2026-03-08 08:19:25,303 - chronos.tests.test_suite - INFO - [MOCK] Running Atomic test: PowerShell Encoded Commands for T1059
+2026-03-08 08:21:47,181 - chronos.data.pipeline.kafka_consumer - WARNING - Kafka not available. Using mock consumer.
+2026-03-08 08:21:47,182 - chronos.data.collectors.elasticsearch_client - WARNING - Elasticsearch not available
+2026-03-08 08:21:47,183 - chronos.data.pipeline.kafka_producer - WARNING - Kafka not available. Using mock producer.
+2026-03-08 08:21:47,187 - __main__ - INFO - Running CHRONOS test suite...
+2026-03-08 08:21:47,191 - chronos.core.analytics.graph - INFO - Graph initialized with sample data
+2026-03-08 08:21:47,192 - chronos.soar.orchestration.response_orchestrator - WARNING - [MOCK] Isolating host: WS-001
+2026-03-08 08:21:47,192 - chronos.soar.orchestration.response_orchestrator - WARNING - [MOCK] Notifying SOC about: C2 Beaconing Detected
+2026-03-08 08:21:47,192 - chronos.soar.orchestration.response_orchestrator - WARNING - [MOCK] Escalating alert: C2 Beaconing Detected
+2026-03-08 08:21:47,192 - chronos.soar.orchestration.response_orchestrator - INFO - Executed 3 response actions for alert: C2 Beaconing Detected
+2026-03-08 08:21:47,192 - chronos.tests.test_suite - INFO - [MOCK] Running Atomic test: Invoke-PhishingLink for T1566
+2026-03-08 08:21:47,192 - chronos.tests.test_suite - INFO - [MOCK] Running Atomic test: PowerShell Encoded Commands for T1059
+2026-03-08 08:22:13,972 - chronos.data.pipeline.kafka_consumer - WARNING - Kafka not available. Using mock consumer.
+2026-03-08 08:22:13,973 - chronos.data.collectors.elasticsearch_client - WARNING - Elasticsearch not available
+2026-03-08 08:22:13,974 - chronos.data.pipeline.kafka_producer - WARNING - Kafka not available. Using mock producer.
+2026-03-08 08:22:13,978 - __main__ - INFO - Generating CHRONOS dashboard...

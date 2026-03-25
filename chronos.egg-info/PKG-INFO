@@ -1,0 +1,221 @@
+Metadata-Version: 2.4
+Name: chronos
+Version: 1.0.0
+Summary: CHRONOS - Continuous Heuristic Recognition of Network Operations & Signatures
+Author: CHRONOS Team
+License: MIT
+Project-URL: Homepage, https://github.com/chronos-security/chronos
+Project-URL: Documentation, https://docs.chronos.security
+Project-URL: Repository, https://github.com/chronos-security/chronos
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Security
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi>=0.100.0
+Requires-Dist: uvicorn>=0.23.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: redis>=4.5.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: scipy>=1.10.0
+Requires-Dist: elasticsearch>=8.0.0
+Requires-Dist: neo4j>=5.0.0
+Requires-Dist: kafka-python>=2.0.2
+Requires-Dist: aiohttp>=3.8.0
+Requires-Dist: websockets>=11.0.0
+Requires-Dist: requests>=2.31.0
+Requires-Dist: cryptography>=39.0.0
+Requires-Dist: structlog>=23.1.0
+Requires-Dist: prometheus-client>=0.17.0
+Requires-Dist: bcrypt>=4.0.0
+Requires-Dist: dnspython>=2.4.0
+Requires-Dist: python-dateutil>=2.8.2
+Requires-Dist: python-nmap>=0.7.1
+Requires-Dist: scikit-learn>=1.3.0
+Requires-Dist: plotly>=5.15.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.0.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: isort>=5.12.0; extra == "dev"
+Requires-Dist: flake8>=6.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Dynamic: requires-python
+
+# CHRONOS: Temporal Analysis & Anomaly Detection for APT Hunting
+
+Continuous Heuristic Recognition of Network Operations & Signatures
+
+## Project Overview
+
+CHRONOS is a multi-layered blue team platform that detects Advanced Persistent Threats (APTs) through:
+- Temporal behavior analysis (time-series anomaly detection)
+- Graph-based lateral movement detection
+- Automated threat hunting
+- SOAR integration for automated response
+
+## Key Features
+
+### Out-of-the-Box Operation
+- **Demo Mode**: Generate synthetic data for testing and demonstration
+- **Graceful Degradation**: System runs without external services (Kafka, ES, Neo4j)
+- **No API Keys Required**: All integrations are optional and disabled by default
+
+### External Services (Optional)
+- **Kafka**: Message streaming for high-volume event processing
+- **Elasticsearch**: Data storage and search
+- **Neo4j**: Graph-based lateral movement detection
+- **Redis**: Caching and real-time features
+- **VirusTotal/AbuseIPDB**: Threat intelligence enrichment
+
+## Quick Start (No External Services Required)
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Create ML model placeholders (optional - for ML features)
+python create_placeholder_models.py
+
+# Run with demo mode (generates synthetic data)
+python -m chronos.core.detection.engine
+```
+
+The system will run in demo mode by default, generating synthetic security events for testing detection logic.
+
+## Running with External Services
+
+### Minimal Setup (API + Engine only)
+```bash
+# Start only the API and engine services
+docker-compose up chronos-api chronos-engine
+```
+
+### Full Stack
+```bash
+# Start all services (requires significant resources)
+docker-compose --profile full up
+
+# Start with specific profiles
+docker-compose --profile kafka --profile elasticsearch up
+```
+
+### Available Docker Profiles
+- `default`: Core API and engine only
+- `full`: All services
+- `kafka`: Kafka and Zookeeper
+- `elasticsearch`: Elasticsearch, Kibana, Logstash
+- `graph`: Neo4j
+- `visualization`: Grafana, frontend
+- `cache`: Redis
+
+## Configuration
+
+### Environment Variables (Optional)
+Copy `.env.example` to `.env` and configure:
+- `VT_API_KEY`: VirusTotal API key
+- `ABUSEIPDB_API_KEY`: AbuseIPDB API key
+- `EDR_API_KEY`: EDR integration (Wazuh/SentinelOne)
+- etc.
+
+### config/config.yaml
+
+Key settings:
+```yaml
+# Demo mode - generates synthetic data for testing
+data_sources:
+  demo_mode:
+    enabled: true  # Set to false when connecting to real data sources
+
+# Service availability - set to true to enable external services
+services:
+  kafka:
+    enabled: false  # Set to true if Kafka is available
+  elasticsearch:
+    enabled: false
+  neo4j:
+    enabled: false
+
+# SOAR - disabled by default for safety
+soar:
+  dry_run: true  # Actions are logged but not executed
+```
+
+## Module Descriptions
+
+### Core Detection Engines
+
+- **Temporal Behavior Analysis (TBA)**: Detects C2 beaconing, DGA domains, abnormal login times
+- **Graph-Based Detection**: Models network as graph, detects lateral movement patterns
+- **Identity Threat Detection**: Detects compromised credentials, impossible travel, privilege escalation
+
+### Data Pipeline
+
+- **Demo Mode**: Synthetic event generation for testing
+- **Kafka Producers**: Collect events from multiple sources (optional)
+- **Logstash Filters**: Normalize and enrich data (optional)
+- **Elasticsearch Storage**: Centralized log aggregation (optional)
+
+### Threat Hunting
+
+- **Automated Playbooks**: Hypothesis-driven hunting workflows
+- **ML Alert Triage**: Prioritizes alerts based on risk scoring
+
+### SOAR Integration
+
+- **Dry-Run Mode**: All actions logged but not executed by default
+- **Response Orchestrator**: Automated containment actions (when enabled)
+- **Enrichment**: VirusTotal, AbuseIPDB, MISP integration (when configured)
+
+## ML Models
+
+Placeholder models are provided in `models/`:
+- `dga_classifier.pth` - DGA domain detection
+- `alert_prioritizer.pth` - Alert prioritization
+- `beaconing_lstm.pth` - C2 beaconing detection
+- `anomaly_detector.pkl` - General anomaly detection
+- `graph_analyzer.pth` - Graph-based lateral movement
+
+Replace with trained models for production use.
+
+## Testing
+
+```bash
+# Run unit tests
+pytest tests/
+
+# Run with demo mode (no external services needed)
+python -m chronos.core.detection.engine
+```
+
+## MITRE ATT&CK Coverage
+
+CHRONOS provides detection coverage for:
+- Initial Access (T1566, T1190)
+- Execution (T1059, T1204)
+- Persistence (T1547, T1136)
+- Privilege Escalation (T1055, T1078)
+- Lateral Movement (T1021, T1210)
+- Collection (T1005, T1119)
+- Exfiltration (T1041, T1048)
+- Command & Control (T1071, T1105)
+
+## Security Notes
+
+- SOAR auto-response is disabled by default (`dry_run: true`)
+- All response actions require explicit enablement in config
+- Threat intelligence APIs require user configuration
+- Endpoint agent is disabled by default
+
+## License
+
+MIT License - Educational Use Only

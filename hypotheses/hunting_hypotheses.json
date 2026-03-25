@@ -1,0 +1,155 @@
+{
+  "hypotheses": [
+    {
+      "id": "ghost-credentials-001",
+      "title": "Ghost Credentials - Dormant Accounts Active",
+      "category": "Credential Access",
+      "mitre_techniques": ["T1078", "T1110", "T1552"],
+      "hypothesis": "Adversaries may obtain and abuse credentials of dormant accounts that have not been disabled after employee departure, enabling persistent access without triggering security alerts.",
+      "indicators": [
+        "Successful authentication from IPs not previously associated with the account",
+        "Authentication outside normal working hours",
+        "First-time access to sensitive resources after extended inactivity",
+        "Multiple failed attempts followed by successful login"
+      ],
+      "data_sources": ["windows_events/4624", "windows_events/4625", "azure_ad_signin"],
+      "query_template": "index=windowsEvents EventCode=4624 | where TimeGenerated > ago(90d) | where not(Account in (activeEmployees)) | where SrcIP not in (knownIPRanges)",
+      "priority": "high",
+      "status": "active",
+      "last_run": null,
+      "findings": 0
+    },
+    {
+      "id": "lateral-movement-002",
+      "title": "Lateral Movement via SMB/Admin Shares",
+      "category": "Lateral Movement",
+      "mitre_techniques": ["T1021", "T1570", "T1080"],
+      "hypothesis": "Attackers may use SMB/Admin shares to move laterally within the network, leveraging legitimate protocols for command execution.",
+      "indicators": [
+        "Unusual SMB traffic between workstations",
+        "Access to ADMIN$ or C$ shares from non-admin users",
+        "Execution of binaries from network shares",
+        "PsExec or similar tool usage"
+      ],
+      "data_sources": ["zeek_connections", "sysmon/EventID=3", "windows_events/4688"],
+      "query_template": "index=zeek conn_state=\"S0\" dest_port=445 | stats count by src_ip dest_ip | where count > 10",
+      "priority": "critical",
+      "status": "active",
+      "last_run": null,
+      "findings": 0
+    },
+    {
+      "id": "beaconing-003",
+      "title": "C2 Beaconing Detection",
+      "category": "Command and Control",
+      "mitre_techniques": ["T1071", "T1573", "T1102"],
+      "hypothesis": "Compromised hosts may establish periodic beaconing patterns to external C2 infrastructure, exhibiting regular time intervals and consistent data volumes.",
+      "indicators": [
+        "Regular interval HTTP/HTTPS requests to external IPs",
+        "Consistent byte transfer sizes",
+        "DNS queries to rare or suspicious domains",
+        "Requests to known C2 domains"
+      ],
+      "data_sources": ["zeek_http", "zeek_dns", "dns_logs"],
+      "query_template": "index=zeek_http | stats count, bytes_out by src_ip, dest_ip, uri | where frequency_match > 0.8",
+      "priority": "critical",
+      "status": "active",
+      "last_run": null,
+      "findings": 0
+    },
+    {
+      "id": "privilege-escalation-004",
+      "title": "Privilege Escalation via Service Modification",
+      "category": "Privilege Escalation",
+      "mitre_techniques": ["T1543", "T1548", "T1134"],
+      "hypothesis": "Adversaries may create or modify Windows services to execute malicious code with elevated privileges.",
+      "indicators": [
+        "New services created with binary path to temp folder",
+        "Modification of existing service configurations",
+        "Services running as SYSTEM",
+        "Service binary path changes"
+      ],
+      "data_sources": ["sysmon/EventID=7045", "windows_events/7045"],
+      "query_template": "index=windowsEvents EventCode=7045 | where ServicePath contains \"Temp\" OR ServicePath contains \"AppData\"",
+      "priority": "high",
+      "status": "active",
+      "last_run": null,
+      "findings": 0
+    },
+    {
+      "id": "data-exfiltration-005",
+      "title": "Data Exfiltration via Cloud Storage",
+      "category": "Exfiltration",
+      "mitre_techniques": ["T1041", "T1567", "T1048"],
+      "hypothesis": "Attackers may exfiltrate data to cloud storage services using legitimate cloud sync utilities or direct uploads.",
+      "indicators": [
+        "Large outbound data transfers to cloud storage domains",
+        "Unusual cloud sync application activity",
+        "Access to personal cloud storage from corporate endpoints",
+        "Data transfer during non-working hours"
+      ],
+      "data_sources": ["zeek_ssl", "proxy_logs", "cloudtrail"],
+      "query_template": "index=proxy method=POST dest_port=443 | where dest_domain contains \"dropbox\" OR \"google-drive\" OR \"onedrive\" | stats sum(bytes_out) by src_ip",
+      "priority": "critical",
+      "status": "active",
+      "last_run": null,
+      "findings": 0
+    },
+    {
+      "id": "persistence-006",
+      "title": "Registry Run Keys Persistence",
+      "category": "Persistence",
+      "mitre_techniques": ["T1547", "T1060"],
+      "hypothesis": "Adversaries may add programs to run at system startup by modifying Windows registry Run keys or startup folders.",
+      "indicators": [
+        "New entries in HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+        "New executables in Startup folder",
+        "Modifications to RunOnce keys",
+        "Suspicious file paths in autorun locations"
+      ],
+      "data_sources": ["sysmon/EventID=13", "windows_events/4657"],
+      "query_template": "index=sysmon EventID=13 TargetObject=*Run* | where Image not in (allowedBinaries)",
+      "priority": "high",
+      "status": "active",
+      "last_run": null,
+      "findings": 0
+    },
+    {
+      "id": "defense-evasion-007",
+      "title": "Process Injection Detection",
+      "category": "Defense Evasion",
+      "mitre_techniques": ["T1055", "T1564"],
+      "hypothesis": "Adversaries may inject malicious code into legitimate processes to evade detection and gain elevated access.",
+      "indicators": [
+        "Suspicious process hollowing patterns",
+        "Remote thread creation in system processes",
+        "DLL injection into critical processes",
+        "Process memory anomalies"
+      ],
+      "data_sources": ["sysmon/EventID=8", "sysmon/EventID=10", "sysmon/EventID=17"],
+      "query_template": "index=sysmon EventID=8 | where TargetImage in (criticalProcesses) | where SourceImage contains \"cmd\" OR SourceImage contains \"powershell\"",
+      "priority": "high",
+      "status": "active",
+      "last_run": null,
+      "findings": 0
+    },
+    {
+      "id": "impossible-travel-008",
+      "title": "Impossible Travel - Geographic Anomaly",
+      "category": "Credential Access",
+      "mitre_techniques": ["T1078", "T1110"],
+      "hypothesis": "Adversaries may use stolen credentials to authenticate from geographically impossible locations, indicating account compromise.",
+      "indicators": [
+        "Logins from two locations within timeframe less than travel time",
+        "Logins from new geographic locations",
+        "Concurrent sessions from different countries"
+      ],
+      "data_sources": ["azure_ad_signin", "windows_events/4624", "vpn_logs"],
+      "query_template": "index=azure_signin | where login_latency_minutes < (time_between_locations_hours * 60)",
+      "priority": "medium",
+      "status": "active",
+      "last_run": null,
+      "findings": 0
+    }
+  ]
+}

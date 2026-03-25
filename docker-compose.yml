@@ -1,0 +1,439 @@
+services:
+  # Zookeeper for Kafka (optional - only if kafka.enabled=true)
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    hostname: zookeeper
+    container_name: chronos-zookeeper
+    profiles:
+      - full
+      - kafka
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    volumes:
+      - zookeeper_data:/var/lib/zookeeper/data
+      - zookeeper_logs:/var/lib/zookeeper/log
+    networks:
+      - chronos-network
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "2181"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Kafka message broker (optional)
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    hostname: kafka
+    container_name: chronos-kafka
+    profiles:
+      - full
+      - kafka
+    depends_on:
+      zookeeper:
+        condition: service_healthy
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
+      KAFKA_LOG_RETENTION_HOURS: 168
+      KAFKA_LOG_SEGMENT_BYTES: 1073741824
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+    networks:
+      - chronos-network
+    healthcheck:
+      test: ["CMD", "kafka-topics", "--bootstrap-server", "localhost:9092", "--list"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+  # Kafka UI for monitoring (optional)
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    hostname: kafka-ui
+    container_name: chronos-kafka-ui
+    profiles:
+      - full
+      - kafka
+    depends_on:
+      - kafka
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: chronos
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
+      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
+    networks:
+      - chronos-network
+
+  # Elasticsearch (optional) - Ports changed to avoid conflict with Wazuh
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.10.0
+    hostname: elasticsearch
+    container_name: elasticsearch
+    profiles:
+      - full
+      - elasticsearch
+      - visualization
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - xpack.security.enrollment.enabled=false
+      - xpack.security.http.ssl.enabled=false
+      - xpack.security.transport.ssl.enabled=false
+      - ES_JAVA_OPTS=-Xms2g -Xmx2g
+    ports:
+      - "19200:9200"
+      - "19300:9300"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+      - elasticsearch_logs:/usr/share/elasticsearch/logs
+    networks:
+      - chronos-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sf http://localhost:9200/_cluster/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # Kibana for visualization (optional)
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.10.2
+    hostname: kibana
+    container_name: chronos-kibana
+    profiles:
+      - full
+      - elasticsearch
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - CHRONOS_ENVIRONMENT=lab
+    networks:
+      - chronos-network
+
+  # Logstash for log parsing (optional)
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.10.0
+    hostname: logstash
+    container_name: chronos-logstash
+    profiles:
+      - full
+      - elasticsearch
+    depends_on:
+      - elasticsearch
+      - kafka
+    ports:
+      - "5044:5044"
+      - "9600:9600"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:29092
+    networks:
+      - chronos-network
+
+  # Grafana for metrics (optional)
+  grafana:
+    image: grafana/grafana:10.1.0
+    hostname: grafana
+    container_name: chronos-grafana
+    profiles:
+      - full
+      - visualization
+    depends_on:
+      - elasticsearch
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=chronos123
+      - GF_USERS_ALLOW_SIGN_UP=false
+      - GF_SERVER_ROOT_URL=http://localhost:3000
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    networks:
+      - chronos-network
+
+  # Neo4j for graph database (optional)
+  neo4j:
+    image: neo4j:5.12-community
+    hostname: neo4j
+    container_name: chronos-neo4j
+    profiles:
+      - full
+      - graph
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_AUTH=neo4j/chronos123
+      - NEO4J_dbms_memory_heap_max__size=2G
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+      - NEO4J_dbms_security_procedures_allowlist=apoc.*
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+    networks:
+      - chronos-network
+
+  # Redis for caching and real-time
+  redis:
+    image: redis:7.2-alpine
+    hostname: redis
+    container_name: chronos-redis
+    profiles:
+      - default
+      - full
+      - cache
+      - threat-intel
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    networks:
+      - chronos-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # CHRONOS Detection Engine (core - always runs)
+  chronos-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile.engine
+    hostname: chronos-engine
+    container_name: chronos-engine
+    profiles:
+      - default
+    ports:
+      - "5000:5000"
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - NEO4J_URI=bolt://neo4j:7687
+      - NEO4J_PASSWORD=chronos123
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./config:/app/config
+      - ./models:/app/models
+      - ./logs:/app/logs
+    networks:
+      - chronos-network
+    restart: unless-stopped
+
+  # WebSocket Server for real-time alerts (core - always runs)
+  chronos-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    hostname: chronos-api
+    container_name: chronos-api
+    profiles:
+      - default
+      - visualization
+    ports:
+      - "8000:8000"
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:29092
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - CHRONOS_API_KEY=chronos-secret-key-2024
+      - MISP_URL=${MISP_URL}
+      - MISP_API_KEY=${MISP_API_KEY}
+      - _VERIFY_SSL=${MISP_VERIFY_SSL:-false}
+      - MISP_ENABLED=${MISP_ENABLED:-false}
+      - VT_API_KEY=${VT_API_KEY}
+      - ABUSEIPDB_API_KEY=${ABUSEIPDB_API_KEY}
+    volumes:
+      - ./config:/app/config
+      - ./logs:/app/logs
+    networks:
+      - chronos-network
+    restart: unless-stopped
+
+  # Frontend React App (optional)
+  chronos-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    hostname: chronos-frontend
+    container_name: chronos-frontend
+    profiles:
+      - full
+      - visualization
+    ports:
+      - "80:80"
+    networks:
+      - chronos-network
+    restart: unless-stopped
+
+  # MISP Threat Intelligence Platform
+  
+ # misp-core:
+  #  image: ghcr.io/misp/misp-docker/misp-core:latest
+   # hostname: misp-core
+  #  container_name: chronos-misp-core
+   # profiles:
+   #   - full
+    #  - threat-intel
+    #ports:
+   #   - "8443:443"
+   # depends_on:
+   #   misp-db:
+    ##    condition: service_healthy
+    #  misp-redis:
+    #    condition: service_started
+   # environment:
+    #  - MYSQL_HOST=misp-db
+    #  - MYSQL_USER=misp
+     # - MYSQL_PASSWORD=misp123
+     # - MYSQL_DATABASE=misp
+     # - REDIS_HOST=misp-redis
+     # - TIMEZONE=America/New_York
+     # - MISP_BASEURL=https://localhost:8443
+      #- MISP_EMAIL=admin@localhost
+     # - MISP_ADMIN_EMAIL=admin@localhost
+     # - MISP_ADMIN_PASSPHRASE=admin
+   ##   - MISP_MODULES_FQDN=http://misp-modules
+  #  volumes:
+    #  - misp_data:/var/www/MISP/app/files
+  #    - misp_logs:/var/www/MISP/app/tmp/logs
+ #     - ./ssl:/etc/nginx/certs
+  #  networks:
+  #    - chronos-network
+  #  restart: unless-stopped 
+    
+
+       # MISP Database
+  misp-db:
+    image: mysql:5.7
+    hostname: misp-db
+    container_name: chronos-misp-db
+    profiles:
+      - full
+      - threat-intel
+    environment:
+      - MYSQL_ROOT_PASSWORD=misp123
+      - MYSQL_DATABASE=misp
+      - MYSQL_USER=misp
+      - MYSQL_PASSWORD=misp123
+    volumes:
+      - misp_db_data:/var/lib/mysql
+    networks:
+      chronos-network:
+      #  ipv4_address: 172.18.0.3
+    restart: unless-stopped
+    command: --sql_mode= --innodb_strict_mode=0
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-pmisp123"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # MISP Redis
+  misp-redis:
+    image: redis:7.2-alpine
+    hostname: misp-redis
+    container_name: chronos-misp-redis
+    profiles:
+      - full
+      - threat-intel
+    ports:
+      - "6380:6379"
+    volumes:
+      - misp_redis_data:/data
+    networks:
+      chronos-network:
+      #  ipv4_address: 172.18.0.2
+    restart: unless-stopped
+
+  # MISP Main Application - USING WORKING IMAGE
+  misp:
+    image: harvarditsecurity/misp:latest
+    hostname: misp
+    container_name: chronos-misp
+    profiles:
+      - full
+      - threat-intel
+    ports:
+      - "8443:443"
+    depends_on:
+      misp-db:
+        condition: service_healthy
+      misp-redis:
+        condition: service_started
+    environment:
+      - MYSQL_HOST=misp-db
+      - MYSQL_DATABASE=misp
+      - MYSQL_USER=misp
+      - MYSQL_PASSWORD=misp123
+      - MYSQL_ROOT_PASSWORD=misp123
+      - REDIS_HOST=misp-redis
+      - TIMEZONE=America/New_York
+      - MISP_BASEURL=https://localhost:8443
+      - MISP_EMAIL=admin@localhost
+      - MISP_ADMIN_EMAIL=admin@localhost
+      - MISP_ADMIN_PASSPHRASE=admin
+      - MISP_FQDN=localhost
+      - MISP_HTTPS=false
+    volumes:
+      - misp_data:/var/www/MISP
+      - misp_logs:/var/log/apache2
+    networks:
+      chronos-network:
+       # ipv4_address: 172.18.0.4
+    restart: unless-stopped
+    extra_hosts:
+      - "misp:127.0.0.1"
+    
+volumes:
+  zookeeper_data:
+  zookeeper_logs:
+  kafka_data:
+  elasticsearch_data:
+  elasticsearch_logs:
+  grafana_data:
+  neo4j_data:
+  neo4j_logs:
+  redis_data:
+  misp_data:
+  misp_logs:
+  misp_db_data:
+  misp_redis_data:
+
+networks:
+  chronos-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16

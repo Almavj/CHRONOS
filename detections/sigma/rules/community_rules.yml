@@ -1,0 +1,344 @@
+title: Suspicious PowerShell Download
+id: 1000001
+status: stable
+author: CHRONOS Community
+date: 2024-01-01
+level: high
+tags:
+  - attack.initial_access
+  - attack.t1566
+  - attack.execution
+  - attack.t1059
+description: Detects suspicious PowerShell download commands
+detection:
+  selection:
+    process_name: powershell.exe
+    command_line|contains:
+      - 'Invoke-WebRequest'
+      - 'iwr'
+      - 'curl'
+      - 'wget'
+      - 'DownloadFile'
+  condition: selection
+falsepositives:
+  - Legitimate software updates
+  - Admin scripts
+
+---
+title: SMB Lateral Movement
+id: 1000002
+status: stable
+author: CHRONOS Community
+date: 2024-01-01
+level: critical
+tags:
+  - attack.lateral_movement
+  - attack.t1021
+  - attack.t1021.002
+description: Detects SMB lateral movement patterns
+detection:
+  selection:
+    dest_port: 445
+    process_name|contains:
+      - 'smb'
+      - 'psexec'
+      - 'netuse'
+  condition: selection
+falsepositives:
+  - File server access
+
+---
+title: Windows Defender Disabled
+id: 1000003
+status: stable
+author: CHRONOS Community
+date: 2024-01-01
+level: critical
+tags:
+  - attack.defense_evasion
+  - attack.t1562
+  - attack.t1562.001
+description: Detects Windows Defender being disabled
+detection:
+  selection:
+    process_name: MpDefenderCoreTask.exe
+    action: disabled
+  selection2:
+    command_line|contains:
+      - 'Disable-Antivirus'
+      - 'Set-MpPreference -Disable*'
+  condition: selection or selection2
+falsepositives:
+  - Group policy changes
+
+---
+title: Suspicious DLL Load
+id: 1000004
+status: stable
+author: CHRONOS Community
+date: 2024-01-01
+level: high
+tags:
+  - attack.defense_evasion
+  - attack.t1574
+  - attack.execution
+  - attack.t1204
+description: Detects loading of suspicious DLLs
+detection:
+  selection:
+    event_id: 7
+    image|contains:
+      - 'rundll32'
+      - 'regsvr32'
+    dll_name|contains:
+      - '.tmp'
+      - 'temp'
+  condition: selection
+falsepositives:
+  - Legitimate DLL loading
+
+---
+title: Cobalt Strike DNS Beaconing
+id: 1000005
+status: stable
+author: CHRONOS Community
+date: 2024-01-01
+level: critical
+tags:
+  - attack.command_and_control
+  - attack.t1071
+  - attack.t1071.004
+description: Detects potential Cobalt Strike DNS beaconing
+detection:
+  selection:
+    dns_query|contains:
+      - '.cdn.'
+      - '.cloudflare.'
+      - '.aws.'
+    query_length|gt: 50
+  condition: selection
+falsepositives:
+  - Legitimate long DNS queries
+
+---
+title: Credential Dumping via LSASS
+id: 1000006
+status: stable
+author: CHRONOS Community
+date: 2024-01-01
+level: critical
+tags:
+  - attack.credential_access
+  - attack.t1003
+  - attack.t1003.001
+description: Detects LSASS process access for credential dumping
+detection:
+  selection:
+    event_id: 10
+    target_process: lsass.exe
+    granted_access: '0x1400'
+  condition: selection
+falsepositives:
+  - Legitimate security scanning
+
+---
+title: Persistence via Registry Run Keys
+id: 1000007
+status: stable
+author: CHRONOS Community
+date: 2024-01-01
+level: high
+tags:
+  - attack.persistence
+  - attack.t1547
+  - attack.t1547.001
+description: Detects registry run key persistence
+detection:
+  selection:
+    event_id: 4657
+    registry_key|contains:
+      - 'Software\\Microsoft\\Windows\\CurrentVersion\\Run'
+      - 'Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce'
+  condition: selection
+falsepositives:
+  - Legitimate software installation
+
+---
+title: Kerberoasting Activity
+id: 1000008
+status: stable
+author: CHRONOS Community
+date: 2024-01-01
+level: high
+tags:
+  - attack.credential_access
+  - attack.t1558
+  - attack.t1558.003
+description: Detects kerberoasting attack patterns
+detection:
+  selection:
+    event_id: 4769
+    ticket_options: '0x40810010'
+    encryption_type: '0x17'
+  condition: selection
+falsepositives:
+  - Service account legitimate usage
+
+---
+title: Suspicious Certutil Usage
+id: 1000009
+status: stable
+author: CHRONOS Community
+date: 2024-01-01
+level: medium
+tags:
+  - attack.defense_evasion
+  - attack.t1027
+  - attack.execution
+  - attack.t1059
+description: Detects certutil being used for malicious purposes
+detection:
+  selection:
+    process_name: certutil.exe
+    command_line|contains:
+      - '-decode'
+      - '-encode'
+      - 'download'
+      - 'urlcache'
+  condition: selection
+falsepositives:
+  - Legitimate certificate operations
+
+---
+title: RDP Brute Force Detection
+id: 1000010
+status: stable
+author: CHRONOS Community
+date: 2024-01-01
+level: high
+tags:
+  - attack.credential_access
+  - attack.t1110
+description: Detects RDP brute force attempts
+detection:
+  selection:
+    event_id: 4625
+    logon_type: 10
+    failure_reason: '%%2313'
+  condition: selection
+falsepositives:
+  - Multiple failed logins from same user
+
+---
+title: New Service Creation
+id: 1000011
+status: stable
+author: CHRONOS Community
+date: 2024-01-01
+level: high
+tags:
+  - attack.persistence
+  - attack.t1543
+  - attack.t1543.002
+description: Detects creation of new Windows services
+detection:
+  selection:
+    event_id: 7045
+    service_name|contains:
+      - 'temp'
+      - 'tmp'
+      - 'update'
+  condition: selection
+falsepositives:
+  - Legitimate software installation
+
+---
+title: Mimikatz Activity Detection
+id: 1000012
+status: stable
+author: CHRONOS Community
+date: 2024-01-01
+level: critical
+tags:
+  - attack.credential_access
+  - attack.t1003
+  - attack.t1555
+description: Detects Mimikatz tool usage
+detection:
+  selection:
+    process_name|contains:
+      - 'mimikatz'
+      - 'mimikatz.exe'
+    command_line|contains:
+      - 'sekurlsa'
+      - 'lsadump'
+      - 'kerberos'
+  condition: selection
+falsepositives:
+  - Security testing
+
+---
+title: UAC Bypass via CMSTP
+id: 1000013
+status: stable
+author: CHRONOS Community
+date: 2024-01-01
+level: high
+tags:
+  - attack.privilege_escalation
+  - attack.t1548
+  - attack.defense_evasion
+  - attack.t1218
+description: Detects UAC bypass via CMSTP
+detection:
+  selection:
+    process_name: cmstp.exe
+    command_line|contains:
+      - '/s'
+      - '/au'
+  condition: selection
+falsepositives:
+  - Legitimate CMSTP usage
+
+---
+title: WCE Activity Detection
+id: 1000014
+status: stable
+author: CHRONOS Community
+date: 2024-01-01
+level: critical
+tags:
+  - attack.credential_access
+  - attack.t1003
+description: Detects Windows Credentials Editor usage
+detection:
+  selection:
+    process_name|contains:
+      - 'wce.exe'
+      - 'wceservices'
+  condition: selection
+falsepositives:
+  - Administrative tasks
+
+---
+title: Suspicious Scheduled Task
+id: 1000015
+status: stable
+author: CHRONOS Community
+date: 2024-01-01
+level: medium
+tags:
+  - attack.persistence
+  - attack.t1053
+  - attack.t1053.005
+description: Detects suspicious scheduled task creation
+detection:
+  selection:
+    event_id: 4698
+    task_name|contains:
+      - 'update'
+      - 'task'
+      - 'temp'
+  condition: selection
+falsepositives:
+  - Legitimate scheduled tasks

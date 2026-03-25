@@ -1,0 +1,92 @@
+[project]
+name = "pymisp"
+version = "2.5.33.1"
+description = "Python API for MISP."
+authors = [
+    {name="Raphaël Vinot", email="raphael.vinot@circl.lu"}
+]
+license = "BSD-2-Clause"
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+
+dynamic = [ "classifiers" ]
+
+dependencies = [
+    "requests (>=2.32.5)",
+    "python-dateutil (>=2.9.0.post0)",
+    "deprecated (>=1.3.1)",
+]
+
+[project.urls]
+repository = "https://github.com/MISP/PyMISP"
+issues = "https://github.com/MISP/PyMISP/issues"
+documentation = "https://pymisp.readthedocs.io"
+
+[project.optional-dependencies]
+
+fileobjects = [
+    "pure-magic-rs (>=0.3.2)",
+    "pydeep2 (>=0.5.1)",
+    "lief (>=0.17.4)"
+]
+
+openioc = [ "beautifulsoup4 (>=4.13.5,<4.14)" ]
+
+virustotal = [ "validators (>=0.35.0)" ]
+
+docs = [
+    "sphinx-autodoc-typehints (>=3.9.5) ; python_version >= \"3.12\"",
+    "sphinx (>=9.1.0) ; python_version >= \"3.12\"",
+    "docutils (>=0.22.4) ; python_version >= \"3.12\"",
+    "myst-parser (>=5.0.0) ; python_version >= \"3.12\""
+]
+
+pdfexport = [ "reportlab (>=4.4.10)" ]
+
+url = [ "pyfaup-rs (>=0.4,<0.5)" ]
+
+email = [
+    "extract_msg (>=0.55.0)",
+    "RTFDE (>=0.1.2.2) ; python_version <= \"3.10\"",
+    "oletools (>=0.60.2)"
+]
+
+brotli = [ "urllib3[broti] (>=2.6.3)" ]
+
+[tool.poetry]
+classifiers=[
+    'Development Status :: 5 - Production/Stable',
+    'Environment :: Console',
+    'Operating System :: POSIX :: Linux',
+    'Intended Audience :: Science/Research',
+    'Intended Audience :: Telecommunications Industry',
+    'Intended Audience :: Information Technology',
+    'Topic :: Security',
+    'Topic :: Internet'
+]
+
+exclude = ["pymisp/data"]
+include = [
+    {path = "CHANGELOG.txt", format = ["sdist"]},
+    {path = "LICENSE", format = ["sdist"]},
+    {path = "pymisp/data/*.json", format = ["sdist", "wheel"]},
+    {path = "pymisp/data/misp-objects/*.json", format = ["sdist", "wheel"]},
+    {path = "pymisp/data/misp-objects/objects/*/definition.json", format = ["sdist", "wheel"]},
+    {path = "pymisp/data/misp-objects/relationships/definition.json", format = ["sdist", "wheel"]},
+    {path = "docs", format = ["sdist"]},
+    {path = "examples/*.py", format = ["sdist"]},
+    {path = "tests", format = ["sdist"]}
+]
+
+[tool.poetry.group.dev.dependencies]
+requests-mock = "^1.12.1"
+mypy = "^1.19.1"
+types-requests = "^2.32.4.20260107"
+types-python-dateutil = "^2.9.0.20260302"
+types-redis = "^4.6.0.20241004"
+types-Flask = "^1.1.6"
+pytest-cov = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core>=2.0"]
+build-backend = "poetry.core.masonry.api"

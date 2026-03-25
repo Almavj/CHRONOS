@@ -1,0 +1,96 @@
+{
+  "dashboard": {
+    "title": "CHRONOS Security Overview",
+    "tags": ["chronos", "security", "apt"],
+    "timezone": "browser",
+    "refresh": "30s",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Alert Distribution by Severity",
+        "type": "piechart",
+        "gridPos": {"h": 8, "w": 8, "x": 0, "y": 0},
+        "targets": [
+          {
+            "expr": "count(alert_severity)",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Alerts Over Time",
+        "type": "graph",
+        "gridPos": {"h": 8, "w": 16, "x": 8, "y": 0},
+        "targets": [
+          {
+            "expr": "rate(alert_total[5m])",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Top 10 Attack Techniques",
+        "type": "bargauge",
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 8},
+        "targets": [
+          {
+            "expr": "topk(10, count by (technique) (alert))",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Host Risk Scores",
+        "type": "table",
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 8},
+        "targets": [
+          {
+            "expr": "host_risk_score",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "MITRE ATT&CK Coverage",
+        "type": "bargauge",
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 16},
+        "targets": [
+          {
+            "expr": "mitre_coverage",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Detection Engine Status",
+        "type": "stat",
+        "gridPos": {"h": 4, "w": 6, "x": 18, "y": 16},
+        "targets": [
+          {
+            "expr": "up{job='detection-engine'}",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Active Agents",
+        "type": "stat",
+        "gridPos": {"h": 4, "w": 6, "x": 24, "y": 16},
+        "targets": [
+          {
+            "expr": "agent_active",
+            "refId": "A"
+          }
+        ]
+      }
+    ],
+    "version": 1,
+    "schemaVersion": 16
+  }
+}

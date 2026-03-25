@@ -1,0 +1,911 @@
+2026-03-19 06:20:46,622 - __main__ - INFO - Starting CHRONOS Detection Engine...
+2026-03-19 06:20:46,622 - chronos.core.detection.engine - INFO - Initializing CHRONOS Detection Engine...
+2026-03-19 06:20:46,623 - chronos.core.detection.engine - INFO - Temporal Behavior Analysis module initialized
+2026-03-19 06:20:46,623 - chronos.core.analytics.graph - INFO - Graph initialized with sample data
+2026-03-19 06:20:46,623 - chronos.core.detection.engine - INFO - Graph-based Detection module initialized
+2026-03-19 06:20:46,624 - chronos.core.detection.engine - INFO - Identity Threat Detection module initialized
+2026-03-19 06:20:46,748 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2026-03-19 06:20:46,748 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2026-03-19 06:20:46,749 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: Closing connection. KafkaConnectionError: DNS failure
+2026-03-19 06:20:46,845 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2026-03-19 06:20:46,845 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2026-03-19 06:20:46,846 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: Closing connection. KafkaConnectionError: DNS failure
+2026-03-19 06:20:46,846 - kafka.client - WARNING - No node available during check_version; sleeping 0.01 secs
+2026-03-19 06:20:50,864 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2026-03-19 06:20:50,864 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2026-03-19 06:20:50,864 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: Closing connection. KafkaConnectionError: DNS failure
+2026-03-19 06:20:50,864 - chronos.data.pipeline.kafka_consumer - ERROR - Failed to initialize Kafka consumer: NoBrokersAvailable
+2026-03-19 06:20:50,964 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2026-03-19 06:20:50,964 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2026-03-19 06:20:50,965 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: Closing connection. KafkaConnectionError: DNS failure
+2026-03-19 06:20:54,968 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2026-03-19 06:20:54,968 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2026-03-19 06:20:54,969 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: Closing connection. KafkaConnectionError: DNS failure
+2026-03-19 06:20:54,969 - chronos.data.pipeline.kafka_producer - ERROR - Failed to initialize Kafka producer: NoBrokersAvailable
+2026-03-19 06:20:54,973 - chronos.data.collectors.elasticsearch_client - INFO - Elasticsearch client initialized: ['http://chronos-elasticsearch:9200']
+2026-03-19 06:20:54,973 - chronos.core.detection.engine - INFO - CHRONOS Detection Engine initialized successfully
+2026-03-19 06:20:54,974 - chronos.core.detection.engine - INFO - Starting CHRONOS Detection Engine...
+2026-03-19 06:20:54,974 - chronos.data.pipeline.kafka_consumer - INFO - Running mock consume loop
+2026-03-19 06:20:54,975 - chronos.data.pipeline.kafka_consumer - INFO - Event consumer started
+2026-03-19 06:20:54,977 - chronos.core.detection.engine - INFO - CHRONOS Detection Engine is running
+2026-03-19 06:20:54,978 - __main__ - INFO - Engine running. Press Ctrl+C to stop.
+2026-03-19 06:20:54,978 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 1, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:21:11,328 - api.main - WARNING - Redis not available: Error 113 connecting to redis:6379. No route to host.
+2026-03-19 06:21:25,005 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 7, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:21:55,040 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 13, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:22:25,068 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 19, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:22:55,096 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 25, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:23:10,905 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:23:10,905 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:23:15,942 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:23:15,943 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:23:20,958 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:23:20,958 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:23:25,124 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 31, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:23:25,970 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:23:25,971 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:23:30,983 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:23:30,983 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:23:36,008 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:23:36,009 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:23:41,021 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:23:41,022 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:23:46,042 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:23:46,043 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:23:51,064 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:23:51,064 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:23:55,153 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 37, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:23:56,078 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:23:56,078 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:24:01,098 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:24:01,099 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:24:06,127 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:24:06,128 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:24:11,144 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:24:11,144 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:24:16,159 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:24:16,160 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:24:21,172 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:24:21,172 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:24:25,180 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 43, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:24:26,184 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:24:26,781 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:24:31,795 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:24:31,795 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:24:36,818 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:24:36,822 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:24:41,855 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:24:41,856 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:24:46,876 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:24:46,877 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:24:51,900 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:24:51,901 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:24:55,209 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 49, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:24:56,924 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:24:56,925 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:25:01,947 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:25:01,947 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:25:06,964 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:25:06,965 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:25:11,982 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:25:11,982 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:25:17,002 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:25:17,003 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:25:22,033 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:25:22,034 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:25:25,236 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 55, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:25:27,065 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:25:27,066 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:25:32,092 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:25:32,093 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:25:37,119 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:25:37,121 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:25:42,145 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:25:42,146 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:25:47,176 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:25:47,177 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:25:52,194 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 06:25:52,195 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 06:25:55,264 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 61, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:26:25,292 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 67, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:26:55,320 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 73, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:27:25,350 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 79, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:27:55,380 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 85, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:28:25,408 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 91, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:28:55,437 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 97, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:29:25,464 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 103, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:29:55,492 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 109, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:30:25,521 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 115, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:30:55,548 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 121, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:31:25,576 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 127, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:31:55,605 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 133, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:32:25,633 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 139, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:32:55,660 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 145, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:33:25,690 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 151, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:33:55,720 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 157, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:34:25,749 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 163, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:34:55,777 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 169, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:35:25,804 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 175, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:35:55,832 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 181, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:36:25,860 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 187, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:36:55,888 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 193, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:37:25,917 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 199, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:37:55,947 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 205, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:38:25,976 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 211, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:38:56,004 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 217, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:39:26,032 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 223, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:39:56,060 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 229, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:40:26,088 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 235, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:40:56,118 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 241, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:41:26,148 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 247, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:41:56,177 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 253, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:42:26,204 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 259, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:42:56,232 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 265, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:43:26,262 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 271, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 06:43:56,291 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 277, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:39:48,546 - __main__ - INFO - Starting CHRONOS Detection Engine...
+2026-03-19 16:39:48,547 - chronos.core.detection.engine - INFO - Initializing CHRONOS Detection Engine...
+2026-03-19 16:39:48,547 - chronos.core.detection.engine - INFO - Temporal Behavior Analysis module initialized
+2026-03-19 16:39:48,547 - chronos.core.analytics.graph - INFO - Graph initialized with sample data
+2026-03-19 16:39:48,547 - chronos.core.detection.engine - INFO - Graph-based Detection module initialized
+2026-03-19 16:39:48,547 - chronos.core.detection.engine - INFO - Identity Threat Detection module initialized
+2026-03-19 16:39:52,580 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2026-03-19 16:39:52,580 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2026-03-19 16:39:52,580 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-2.3.0, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: Closing connection. KafkaConnectionError: DNS failure
+2026-03-19 16:39:52,581 - chronos.data.pipeline.kafka_consumer - ERROR - Failed to initialize Kafka consumer: NoBrokersAvailable
+2026-03-19 16:39:52,676 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2026-03-19 16:39:52,677 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2026-03-19 16:39:52,677 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: Closing connection. KafkaConnectionError: DNS failure
+2026-03-19 16:39:52,767 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2026-03-19 16:39:52,767 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2026-03-19 16:39:52,768 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: Closing connection. KafkaConnectionError: DNS failure
+2026-03-19 16:39:56,774 - kafka.conn - WARNING - DNS lookup failed for kafka:9092, exception was [Errno -2] Name or service not known. Is your advertised.listeners (called advertised.host.name before Kafka 9) correct and resolvable?
+2026-03-19 16:39:56,775 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: DNS lookup failed for kafka:9092 (AddressFamily.AF_UNSPEC)
+2026-03-19 16:39:56,775 - kafka.conn - ERROR - <BrokerConnection client_id=kafka-python-producer-1, node_id=bootstrap-0 host=kafka:9092 <connecting> [unspecified None]>: Closing connection. KafkaConnectionError: DNS failure
+2026-03-19 16:39:56,775 - chronos.data.pipeline.kafka_producer - ERROR - Failed to initialize Kafka producer: NoBrokersAvailable
+2026-03-19 16:39:56,779 - chronos.data.collectors.elasticsearch_client - INFO - Elasticsearch client initialized: ['http://chronos-elasticsearch:9200']
+2026-03-19 16:39:56,779 - chronos.core.detection.engine - INFO - CHRONOS Detection Engine initialized successfully
+2026-03-19 16:39:56,779 - chronos.core.detection.engine - INFO - Starting CHRONOS Detection Engine...
+2026-03-19 16:39:56,779 - chronos.data.pipeline.kafka_consumer - INFO - Running mock consume loop
+2026-03-19 16:39:56,780 - chronos.data.pipeline.kafka_consumer - INFO - Event consumer started
+2026-03-19 16:39:56,781 - chronos.core.detection.engine - INFO - CHRONOS Detection Engine is running
+2026-03-19 16:39:56,781 - __main__ - INFO - Engine running. Press Ctrl+C to stop.
+2026-03-19 16:39:56,781 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 1, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:40:08,369 - api.main - WARNING - Redis not available: Error 113 connecting to redis:6379. No route to host.
+2026-03-19 16:40:26,810 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 6, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:40:56,840 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 12, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:41:26,869 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 18, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:41:56,899 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 24, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:42:12,533 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:42:12,534 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:42:17,548 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:42:17,548 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:42:22,564 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:42:22,565 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:42:26,928 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 30, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:42:27,579 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:42:27,581 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:42:32,596 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:42:32,597 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:42:37,621 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:42:37,622 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:42:42,637 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:42:42,637 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:42:47,658 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:42:47,659 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:42:52,678 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:42:52,679 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:42:56,956 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 36, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:42:57,704 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:42:57,705 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:43:02,721 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:43:02,721 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:43:07,736 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:43:07,737 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:43:12,755 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:43:12,755 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:43:17,785 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:43:17,786 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:43:22,805 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:43:22,806 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:43:26,985 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 42, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:43:27,825 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:43:27,825 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:43:32,862 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:43:32,863 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:43:37,886 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:43:37,887 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:43:42,911 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:43:42,912 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:43:47,931 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:43:47,931 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:43:52,950 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:43:52,951 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:43:57,016 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 48, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:43:57,971 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:43:57,972 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:44:02,987 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:44:02,987 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:44:08,005 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:44:08,006 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:44:13,020 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:44:13,020 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:44:18,040 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:44:18,041 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:44:23,056 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:44:23,057 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:44:27,046 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 54, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:44:28,079 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:44:28,079 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:44:33,101 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:44:33,113 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:44:38,129 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:44:38,130 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:44:43,145 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:44:43,145 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:44:48,164 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:44:48,165 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:44:53,180 - chronos.core.detection.engine - INFO - Alert generated: C2 Beaconing Detected: 192.168.1.50 (Severity: AlertSeverity.CRITICAL)
+2026-03-19 16:44:53,180 - chronos.data.pipeline.kafka_producer - INFO - [MOCK] Alert sent: C2 Beaconing Detected: 192.168.1.50 (Severity: critical)
+2026-03-19 16:44:57,076 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 60, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:45:27,104 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 66, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:45:57,133 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 72, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:46:27,162 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 78, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:46:57,192 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 84, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:47:27,220 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 90, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:47:57,248 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 96, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:48:27,276 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 102, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:48:57,304 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 109, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:49:27,333 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 115, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:49:57,363 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 121, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:50:27,392 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 127, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:50:57,421 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 133, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:51:27,449 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 139, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:51:57,476 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 145, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:52:27,504 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 151, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:52:57,533 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 157, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:53:27,563 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 163, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:53:57,592 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 169, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:54:27,620 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 174, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:54:57,650 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 180, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:55:27,680 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 186, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:55:57,709 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 192, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:56:27,736 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 198, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:56:57,764 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 205, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:57:27,796 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 211, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:57:57,824 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 217, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:58:27,852 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 223, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:58:57,882 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 229, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:59:27,912 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 235, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 16:59:57,941 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 241, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:00:27,968 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 247, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:00:57,996 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 253, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:01:28,024 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 259, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:01:58,053 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 265, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:02:28,080 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 271, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:02:58,108 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 277, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:03:28,137 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 283, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:03:58,164 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 289, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:04:28,194 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 295, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:04:58,224 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 301, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:05:28,253 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 307, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:05:58,286 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 313, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:06:28,316 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 319, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:06:58,346 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 325, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:07:28,376 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 331, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:07:58,404 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 337, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:08:25,630 - api.main - INFO - WebSocket connected. Total: 1
+2026-03-19 17:08:25,675 - api.main - INFO - WebSocket connected. Total: 2
+2026-03-19 17:08:28,432 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 343, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:08:58,460 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 349, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:09:28,488 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 355, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:09:58,516 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 361, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:10:28,544 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 367, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:10:58,572 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 373, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:11:28,602 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 379, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:11:58,632 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 385, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:12:28,661 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 391, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:12:58,688 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 397, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:13:28,716 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 403, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:13:58,745 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 409, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:14:28,772 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 415, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:14:58,800 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 421, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:15:28,832 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 427, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:15:58,860 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 433, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:16:28,888 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 439, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:16:58,916 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 445, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:17:28,944 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 451, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:17:58,973 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 457, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:18:29,000 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 463, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:18:59,028 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 469, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:19:29,056 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 475, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:19:59,084 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 481, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:20:29,113 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 487, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:20:59,141 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 493, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:21:29,168 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 499, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:21:59,196 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 505, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:22:29,226 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 511, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:22:59,258 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 517, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:23:29,288 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 523, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:23:59,316 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 529, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:24:29,344 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 535, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:24:59,374 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 541, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:25:29,400 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 547, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:25:59,429 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 553, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:26:29,458 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 559, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:26:59,486 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 565, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:27:29,516 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 571, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:27:59,544 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 577, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:28:29,572 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 583, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:28:59,602 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 589, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:29:29,632 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 595, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:29:59,660 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 601, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:30:29,690 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 607, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:30:59,716 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 613, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:31:29,744 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 619, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:31:59,773 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 625, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:32:29,800 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 631, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:32:59,832 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 637, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:33:29,862 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 643, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:33:59,892 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 649, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:34:29,920 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 655, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:34:59,949 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 661, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:35:29,977 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 667, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:36:00,004 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 673, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:36:30,033 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 679, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:37:00,062 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 685, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:37:30,088 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 691, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:38:00,116 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 697, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:38:30,146 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 703, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:39:00,196 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 709, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:39:30,225 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 715, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:40:00,256 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 721, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:40:30,285 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 727, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:41:00,314 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 733, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:41:30,379 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 739, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:42:00,408 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 745, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:42:30,436 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 751, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:43:00,465 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 757, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:43:30,494 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 763, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:44:00,524 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 769, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:44:30,556 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 775, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:45:00,584 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 781, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:45:30,612 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 787, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:46:00,642 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 793, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:46:30,672 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 799, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:47:00,700 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 805, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:47:30,728 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 811, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:48:00,759 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 817, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:48:30,788 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 823, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:49:00,816 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 829, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:49:30,849 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 835, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:50:00,880 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 841, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:50:30,908 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 847, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:51:00,936 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 853, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:51:30,967 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 859, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:52:00,997 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 865, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:52:31,024 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 871, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:53:01,053 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 877, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:53:31,080 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 883, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:54:01,110 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 889, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:54:31,140 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 895, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:55:01,170 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 901, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:55:31,196 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 907, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:56:01,226 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 913, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:56:31,256 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 919, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:57:01,284 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 925, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:57:31,314 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 931, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:58:01,344 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 937, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:58:31,372 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 943, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:59:01,400 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 949, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 17:59:31,428 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 955, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:00:01,456 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 961, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:00:31,484 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 967, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:01:01,514 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 973, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:01:31,544 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 979, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:02:01,572 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 984, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:02:31,600 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 990, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:03:01,628 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 996, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:03:31,656 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 501, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:04:01,684 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 507, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:04:31,712 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 513, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:05:01,742 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 519, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:05:31,771 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 525, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:06:01,800 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 531, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:06:31,828 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 537, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:07:01,857 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 543, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:07:31,889 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 549, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:08:01,920 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 555, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:08:31,948 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 561, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:09:01,976 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 567, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:09:32,005 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 573, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:10:02,032 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 579, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:10:32,062 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 585, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:11:02,092 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 591, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:11:32,120 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 597, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:12:02,148 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 603, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:12:32,176 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 609, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:13:02,204 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 615, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:13:32,232 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 621, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:14:02,261 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 627, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:14:32,291 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 633, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:15:02,320 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 639, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:15:32,348 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 645, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:16:02,376 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 651, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:16:32,404 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 657, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:17:02,432 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 663, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:17:32,462 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 669, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:18:02,492 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 675, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:18:32,520 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 681, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:19:02,548 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 687, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:19:32,576 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 693, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:20:02,604 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 699, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:20:32,632 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 705, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:21:02,660 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 711, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:21:32,688 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 717, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:22:02,718 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 723, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:22:32,748 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 729, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:23:02,776 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 735, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:23:32,804 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 741, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:24:02,832 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 747, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:24:32,860 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 753, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:25:02,888 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 759, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:25:32,917 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 765, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:26:02,946 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 771, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:26:32,976 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 777, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:27:03,004 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 783, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:27:33,032 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 789, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:28:03,060 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 795, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:28:33,090 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 801, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:29:03,120 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 807, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:29:33,148 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 813, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:30:03,176 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 819, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:30:33,206 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 825, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:31:03,236 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 831, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:31:33,264 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 837, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:32:03,293 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 843, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:32:33,324 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 849, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:33:03,352 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 855, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:33:33,380 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 861, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:34:03,408 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 867, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:34:33,437 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 873, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:35:03,464 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 879, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:35:33,493 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 885, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:36:03,521 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 891, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:36:33,552 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 897, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:37:03,580 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 903, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:37:33,610 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 909, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:38:03,640 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 915, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:38:33,669 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 921, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:39:03,696 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 927, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:39:33,726 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 933, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:40:03,839 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 939, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:40:33,874 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 945, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:41:03,900 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 951, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:41:33,929 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 957, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:42:03,956 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 963, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:42:33,986 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 969, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:43:04,016 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 975, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:43:34,044 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 981, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:44:04,072 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 987, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:44:34,100 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 993, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:45:04,129 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 999, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:45:34,156 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 504, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:46:04,186 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 510, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:46:34,216 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 516, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:47:04,244 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 522, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:47:34,272 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 528, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:48:04,300 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 534, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:48:34,328 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 540, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:49:04,356 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 546, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:49:34,384 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 552, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:50:04,413 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 558, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:50:34,443 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 564, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:51:04,472 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 570, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:51:34,500 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 576, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:52:04,528 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 582, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:52:34,556 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 588, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:53:04,584 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 594, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:53:34,612 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 600, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:54:04,642 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 606, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:54:34,672 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 612, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:55:04,700 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 618, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:55:34,730 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 624, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:56:04,756 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 630, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:56:34,784 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 636, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:57:04,812 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 642, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:57:34,841 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 648, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:58:04,869 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 654, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:58:34,896 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 660, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:59:04,924 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 666, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 18:59:34,954 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 672, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:00:04,984 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 678, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:00:35,014 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 684, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:01:05,044 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 690, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:01:35,074 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 696, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:02:05,104 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 702, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:02:35,132 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 708, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:03:05,160 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 714, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:03:35,190 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 720, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:04:05,220 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 726, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:04:35,248 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 732, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:05:05,276 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 738, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:05:35,304 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 744, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:06:05,332 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 750, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:06:35,361 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 756, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:07:05,388 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 762, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:07:35,416 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 768, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:08:05,444 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 774, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:08:35,547 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 780, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:09:05,580 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 786, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:09:35,608 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 792, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:10:05,637 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 798, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:10:35,664 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 804, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:11:05,692 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 810, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:11:35,720 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 816, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:12:05,748 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 822, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:12:35,776 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 828, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:13:05,804 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 834, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:13:35,835 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 840, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:14:05,865 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 846, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:14:35,892 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 852, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:15:05,921 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 858, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:15:35,948 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 864, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:16:05,978 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 870, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:16:36,093 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 876, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:17:06,128 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 882, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:17:36,156 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 888, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:18:06,184 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 894, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:18:36,212 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 900, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:19:06,240 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 906, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:19:36,268 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 912, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:20:06,296 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 918, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:20:36,324 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 924, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:21:06,354 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 930, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:21:36,384 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 936, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:22:06,413 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 942, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:22:36,447 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 948, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:23:06,480 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 954, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:23:36,509 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 960, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:24:06,540 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 966, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:24:36,568 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 972, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:25:06,596 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 978, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:25:36,624 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 984, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:26:06,653 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 990, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:26:36,680 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 996, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:27:06,708 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 501, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:27:36,737 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 507, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:28:06,764 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 513, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:28:36,792 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 519, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:29:06,820 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 525, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:29:36,848 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 531, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:30:06,876 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 537, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:30:36,904 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 543, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:31:06,933 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 549, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:31:36,960 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 555, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:32:06,989 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 561, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:32:37,019 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 567, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:33:07,048 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 573, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:33:37,078 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 579, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:34:07,108 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 585, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:34:37,137 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 591, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:35:07,167 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 597, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:35:37,196 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 603, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:36:07,224 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 609, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:36:37,252 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 615, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:37:07,280 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 621, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:37:37,308 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 627, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:38:07,337 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 633, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:38:37,364 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 639, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:39:07,393 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 645, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:39:37,420 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 651, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:40:07,448 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 657, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:40:37,478 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 663, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:41:07,508 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 669, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:41:37,536 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 675, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:42:07,566 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 681, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:42:37,592 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 687, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:43:07,620 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 693, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:43:37,648 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 699, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:44:07,676 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 705, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:44:37,705 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 711, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:45:07,732 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 717, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:45:37,766 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 723, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:46:07,796 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 729, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:46:37,824 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 735, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:47:07,854 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 741, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:47:37,884 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 747, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:48:07,913 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 753, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:48:37,940 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 759, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:49:07,970 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 765, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:49:38,000 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 771, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:50:08,029 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 777, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:50:38,056 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 783, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:51:08,086 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 789, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:51:38,116 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 795, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:52:08,144 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 801, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:52:38,172 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 807, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:53:08,200 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 813, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:53:38,230 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 819, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:54:08,256 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 825, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:54:38,284 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 831, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:55:08,312 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 837, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:55:38,341 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 843, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:56:08,371 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 849, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:56:38,400 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 855, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:57:08,429 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 861, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:57:38,456 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 867, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:58:08,486 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 873, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:58:38,516 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 879, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:59:08,546 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 885, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 19:59:38,576 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 891, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:00:08,604 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 897, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:00:38,632 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 903, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:01:08,660 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 909, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:01:38,688 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 915, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:02:08,716 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 921, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:02:38,746 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 927, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:03:08,776 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 933, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:03:38,806 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 939, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:04:08,836 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 945, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:04:38,864 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 951, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:05:08,892 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 957, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:05:38,920 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 963, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:06:08,948 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 969, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:06:38,976 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 975, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:07:09,004 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 981, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:07:39,032 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 987, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:08:09,060 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 993, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:08:39,088 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 999, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:09:09,116 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 504, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:09:39,144 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 510, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:10:09,172 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 516, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:10:39,200 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 522, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:11:09,228 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 528, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:11:39,256 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 534, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:12:09,284 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 540, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:12:39,312 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 546, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:13:09,340 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 552, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:13:39,368 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 558, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:14:09,396 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 564, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:14:39,424 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 570, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:15:09,452 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 576, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:15:39,480 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 582, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:16:09,510 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 588, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:16:39,540 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 594, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:16:49,543 - api.main - INFO - WebSocket disconnected. Total: 1
+2026-03-19 20:16:49,547 - api.main - INFO - WebSocket disconnected. Total: 0
+2026-03-19 20:16:49,971 - api.main - INFO - WebSocket connected. Total: 1
+2026-03-19 20:16:49,993 - api.main - INFO - WebSocket connected. Total: 2
+2026-03-19 20:16:50,573 - api.main - INFO - WebSocket disconnected. Total: 1
+2026-03-19 20:16:50,576 - api.main - INFO - WebSocket disconnected. Total: 0
+2026-03-19 20:16:50,984 - api.main - INFO - WebSocket connected. Total: 1
+2026-03-19 20:16:51,002 - api.main - INFO - WebSocket connected. Total: 2
+2026-03-19 20:17:09,569 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 600, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:17:39,596 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 606, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:18:09,624 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 612, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:18:39,652 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 618, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:19:09,680 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 624, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:19:39,709 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 630, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:20:09,737 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 636, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:20:39,764 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 642, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:21:09,792 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 648, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:21:39,820 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 654, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:22:09,851 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 660, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:22:39,880 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 666, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:23:09,908 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 672, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:23:39,937 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 678, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:24:09,968 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 684, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:24:39,996 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 690, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:25:10,026 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 696, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:25:40,054 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 702, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:26:10,084 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 708, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:26:40,112 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 714, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:27:10,142 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 720, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:27:40,172 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 726, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:28:10,201 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 732, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:28:40,229 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 738, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:29:10,259 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 744, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:29:40,288 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 750, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:30:10,316 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 756, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:30:40,345 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 762, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:31:10,374 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 768, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:31:40,404 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 774, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:32:10,434 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 780, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:32:40,464 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 786, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:33:10,495 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 792, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:33:40,524 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 798, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:34:10,552 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 804, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:34:40,580 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 810, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:35:10,610 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 816, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:35:40,640 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 822, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:36:10,670 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 828, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:36:40,700 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 834, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:37:10,728 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 840, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:37:40,756 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 846, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:38:10,784 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 852, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:38:40,812 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 858, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:39:10,840 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 864, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:39:40,868 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 870, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:40:10,896 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 876, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:40:40,925 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 882, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:41:10,954 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 888, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:41:40,984 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 894, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:42:11,012 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 900, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:42:41,040 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 906, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:43:11,068 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 912, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:43:41,096 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 918, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:44:11,126 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 924, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:44:41,152 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 930, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:45:11,182 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 936, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:45:41,212 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 942, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:46:11,240 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 948, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:46:41,268 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 954, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:47:11,296 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 960, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:47:41,326 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 966, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:48:11,352 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 972, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:48:41,380 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 978, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:49:11,412 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 984, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:49:41,440 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 990, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:50:11,469 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 996, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:50:41,496 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 501, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:51:11,524 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 507, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:51:41,552 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 513, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:52:11,582 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 519, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:52:41,610 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 525, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:53:11,640 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 531, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:53:41,663 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 537, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:54:11,692 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 543, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:54:41,720 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 549, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:55:11,748 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 555, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:55:41,778 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 561, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:56:11,808 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 567, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:56:41,836 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 573, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:57:11,864 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 579, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:57:41,892 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 585, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:58:11,920 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 591, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:58:41,948 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 597, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:59:11,977 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 603, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 20:59:42,007 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 609, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:00:12,036 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 615, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:00:42,064 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 621, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:01:12,092 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 627, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:01:42,122 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 633, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:02:12,152 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 639, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:02:42,180 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 645, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:03:12,210 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 651, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:03:42,240 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 657, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:04:12,268 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 663, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:04:42,296 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 669, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:05:12,326 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 675, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:05:42,356 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 681, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:06:12,386 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 687, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:06:42,416 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 693, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:07:12,444 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 699, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:07:42,472 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 705, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:08:12,501 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 711, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:08:42,528 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 717, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:09:12,556 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 723, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:09:42,586 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 729, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:10:12,612 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 735, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:10:42,640 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 741, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:11:12,668 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 747, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:11:42,696 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 753, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:12:12,726 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 759, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:12:42,752 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 765, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:13:12,783 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 771, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:13:42,812 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 777, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:14:12,842 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 783, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:14:42,872 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 789, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:15:12,900 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 795, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:15:42,930 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 801, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:16:12,960 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 807, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:16:42,990 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 813, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:17:13,021 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 819, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:17:43,048 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 825, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:18:13,078 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 831, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:18:43,104 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 837, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:19:13,132 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 843, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:19:43,160 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 849, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:20:13,188 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 855, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:20:43,218 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 861, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:21:13,248 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 867, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:21:43,276 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 873, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:22:13,306 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 879, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:22:43,309 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 885, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:23:13,336 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 891, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:23:43,364 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 897, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:24:13,394 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 903, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:24:43,424 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 909, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:25:13,454 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 915, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:25:43,469 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 921, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:26:13,496 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 927, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:26:43,524 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 933, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:27:13,552 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 939, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:27:43,580 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 945, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:28:13,610 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 951, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:28:43,636 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 957, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:29:13,664 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 963, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:29:43,694 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 969, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:30:13,724 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 975, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:30:43,752 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 981, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:31:13,780 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 987, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:31:43,809 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 993, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:32:13,839 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 999, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:32:43,868 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 504, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:33:13,896 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 510, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:33:43,924 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 516, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:34:13,952 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 522, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:34:43,980 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 528, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:35:14,008 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 534, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:35:44,036 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 540, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:36:14,064 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 546, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:36:44,092 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 552, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:37:14,122 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 558, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:37:44,152 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 564, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:38:14,180 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 570, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:38:44,208 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 576, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:39:14,238 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 582, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:39:44,268 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 588, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:40:14,296 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 594, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:40:44,324 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 600, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:41:14,352 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 606, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:41:44,380 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 612, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:42:14,410 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 618, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:42:44,440 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 624, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:43:14,469 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 630, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:43:44,496 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 636, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:44:14,524 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 642, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:44:44,554 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 648, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:45:14,580 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 654, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:45:44,608 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 660, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:45:52,981 - api.main - INFO - WebSocket disconnected. Total: 1
+2026-03-19 21:45:52,983 - api.main - INFO - WebSocket disconnected. Total: 0
+2026-03-19 21:46:14,636 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 666, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:46:44,664 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 672, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:47:14,692 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 678, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:47:44,721 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 684, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:48:14,750 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 690, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:48:44,780 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 696, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:49:14,808 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 702, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:49:44,836 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 708, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:50:14,864 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 714, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:50:44,899 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 720, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:51:14,928 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 726, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:51:44,957 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 732, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:52:14,984 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 738, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:52:45,012 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 744, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:53:15,068 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 750, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:53:45,100 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 756, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:54:15,129 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 762, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:54:45,156 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 768, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:55:15,186 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 774, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:55:45,201 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 780, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:56:15,228 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 786, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:56:45,258 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 792, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:57:15,272 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 798, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:57:45,303 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 804, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:58:15,332 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 810, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:58:45,360 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 816, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:59:15,388 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 822, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 21:59:45,416 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 828, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:00:15,445 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 834, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:00:45,472 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 840, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:01:15,501 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 846, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:01:45,528 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 852, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:02:15,556 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 858, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:02:45,584 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 864, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:03:15,615 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 870, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:03:45,644 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 876, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:04:15,672 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 882, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:04:45,700 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 888, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:05:15,728 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 894, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:05:45,756 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 900, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:06:15,785 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 906, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:06:45,814 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 912, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:07:15,844 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 918, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:07:45,873 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 924, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:08:15,900 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 930, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:08:45,928 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 936, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:09:15,957 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 942, 'modules': {'temporal': True, 'graph': True, 'identity': True}}
+2026-03-19 22:09:45,984 - __main__ - INFO - Status: {'running': True, 'event_buffer_size': 948, 'modules': {'temporal': True, 'graph': True, 'identity': True}}

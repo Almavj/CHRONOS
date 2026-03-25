@@ -1,0 +1,4 @@
+wazuh-install-files.tar
+ssl/*.pem
+ssl/*.key
+*.tar

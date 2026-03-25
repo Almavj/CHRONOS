@@ -1,0 +1,26 @@
+# Dockerfile.engine
+FROM python:3.9-slim
+
+WORKDIR /app
+
+# Install build dependencies for cryptography and torch
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    cmake \
+    libssl-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements first for better caching
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY . .
+
+RUN ln -s /app /app/chronos || true
+
+# Add project root to path
+ENV PYTHONPATH=/app
+
+# Command to run the engine service
+CMD ["python", "-m", "chronos.scripts.run", "engine"]

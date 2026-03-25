@@ -1,0 +1,385 @@
+# CHRONOS Configuration
+# Temporal Analysis & Anomaly Detection for APT Hunting
+
+app:
+  name: "CHRONOS"
+  version: "1.0.0"
+  environment: "production"  # lab, production
+  log_level: "INFO"
+  graceful_degradation: false  # Require real services
+
+# Service Availability - set to true to enable services
+services:
+  kafka:
+    enabled: true
+    required: true
+  elasticsearch:
+    enabled: true
+    required: true
+  neo4j:
+    enabled: true
+    required: false
+  redis:
+    enabled: true
+    required: true
+
+# Data Collection
+data_sources:
+  sysmon:
+    enabled: true
+    endpoint: "http://wazuh:9200"
+    index: "windows-sysmon-*"
+    interval: 5
+    event_ids:
+      - 1   # Process creation
+      - 3   # Network connection
+      - 7   # Image load
+      - 8   # CreateRemoteThread
+      - 10  # ProcessAccess
+      - 11  # FileCreate
+      - 12  # RegistryEvent
+      - 13  # RegistryEvent
+      - 14  # RegistryEvent
+      - 15  # FileCreateStreamHash
+      - 17  # NamedPipe
+      - 18  # NamedPipe
+      - 19  # WmiEvent
+      - 20  # WmiEvent
+      - 21  # WmiEvent
+      - 22  # DNSEvent
+      - 23  # FileDelete
+      - 24  # ClipboardChange
+      - 25  # ProcessTampering
+      - 26  # FileDeleteDetected
+      - 27  # FileBlockExecutable
+      - 28  # FileBlockExecutable
+
+  zeek:
+    enabled: true
+    log_path: "/opt/zeek/logs/current"
+    index: "zeek-*"
+    interval: 5
+    log_types:
+      - conn
+      - dns
+      - http
+      - ssl
+      - files
+      - notice
+
+  windows_events:
+    enabled: true
+    endpoint: "http://wazuh:9200"
+    index: "windows-*"
+    event_ids: [4624, 4625, 4672, 4688, 4698, 4699, 4720, 4722, 4723, 4724, 4725, 4726, 4727, 4728, 4729, 4730, 4731, 4732, 4733, 4735, 4737, 4740, 4756, 4767, 4768, 4769, 4770, 4776, 4779, 5156]
+    interval: 5
+
+  cloudtrail:
+    enabled: true
+    region: "us-east-1"
+    interval: 30
+    s3_bucket: "your-cloudtrail-bucket"
+    max_batch_size: 100
+
+  # Demo mode - generates synthetic data for testing (DISABLED for production)
+  demo_mode:
+    enabled: false
+    event_interval_seconds: 10
+
+# Kafka Configuration
+kafka:
+  bootstrap_servers: "kafka:9092"
+  topics:
+    events: "chronos-events"
+    alerts: "chronos-alerts"
+    enrichment: "chronos-enrichment"
+    telemetry: "chronos-telemetry"
+  consumer_group: "chronos-detectors"
+  auto_offset_reset: "earliest"
+  security_protocol: "PLAINTEXT"
+
+# Elasticsearch Configuration
+elasticsearch:
+  hosts: ["http://elasticsearch:9200"]
+  username: "elastic"
+  password: "${ELASTIC_PASSWORD}"
+  index_prefix: "chronos"
+  indices:
+    events: "chronos-events"
+    alerts: "chronos-alerts"
+    telemetry: "chronos-telemetry"
+    hosts: "chronos-hosts"
+    incidents: "chronos-incidents"
+  bulk_size: 1000
+  flush_interval: 5
+
+# Neo4j Graph Database
+neo4j:
+  uri: "bolt://neo4j:7687"
+  username: "neo4j"
+  password: "${NEO4J_PASSWORD}"
+  database: "neo4j"
+  max_connection_pool: 50
+
+# Redis Configuration
+redis:
+  host: "redis"
+  port: 6379
+  db: 0
+  password: "${REDIS_PASSWORD}"
+  ssl: false
+
+# Temporal Behavior Analysis
+tba:
+  beaconing:
+    enabled: true
+    fft_threshold: 0.7
+    min_frequency: 0.001
+    max_frequency: 0.1
+    jitter_threshold: 0.15
+    window_hours: 24
+    min_connections: 10
+    model_path: "models/beaconing_lstm.pth"
+
+  dga:
+    enabled: true
+    entropy_threshold: 3.5
+    alexa_top_size: 10000
+    model_path: "models/dga_classifier.pth"
+
+  working_hours:
+    enabled: true
+    baseline_days: 30
+    zscore_threshold: 3.0
+    weekend_exclude: true
+
+  dwell_time:
+    enabled: true
+    threshold_days: 30
+    survival_confidence: 0.95
+
+# Graph-Based Detection
+graph:
+  lateral_movement:
+    enabled: true
+    max_hops: 3
+    suspicious_ports: [445, 135, 3389, 5985, 5986, 22]
+    admin_privilege_threshold: 5
+
+  pass_the_hash:
+    enabled: true
+    same_user_different_machine_threshold: 3
+
+  unusual_admin_access:
+    enabled: true
+    low_to_high_criticality: true
+
+  neo4j_enabled: true
+
+# Identity Threat Detection
+identity:
+  impossible_travel:
+    enabled: true
+    velocity_threshold_kmh: 1000
+    time_window_minutes: 30
+
+  credential_stuffing:
+    enabled: true
+    failed_login_threshold: 10
+    time_window_minutes: 15
+    ip_variation_threshold: 3
+
+  privilege_escalation:
+    enabled: true
+    role_change_window_days: 7
+
+  service_account_abuse:
+    enabled: true
+    baseline_deviation_threshold: 2.5
+
+# Threat Hunting
+hunting:
+  hypotheses:
+    ghost_credentials:
+      enabled: true
+      frequency: "daily"
+      priority: "high"
+
+    shadow_admins:
+      enabled: true
+      frequency: "weekly"
+      priority: "high"
+
+    supply_chain:
+      enabled: true
+      frequency: "realtime"
+      priority: "critical"
+
+  ml_triage:
+    enabled: true
+    model_path: "models/alert_prioritizer.pth"
+    min_confidence: 0.7
+    asset_criticality_weight: 2.0
+    ttp_similarity_weight: 3.0
+
+# SOAR Configuration
+soar:
+  dry_run: false  # Enable actual response actions
+  require_confirmation: true
+  
+  auto_response:
+    c2_beacon:
+      enabled: true
+      actions: ["isolate_host", "capture_memory", "notify_soc"]
+      escalation_required: true
+
+    lateral_movement:
+      enabled: true
+      actions: ["disable_account", "enable_mfa"]
+      escalation_minutes: 15
+
+    data_exfiltration:
+      enabled: true
+      actions: ["block_ip", "trigger_dlp"]
+      escalation_required: true
+
+    privilege_escalation:
+      enabled: true
+      actions: ["revoke_admin", "reset_password"]
+      escalation_minutes: 30
+
+  enrichment:
+    virustotal:
+      enabled: true
+      api_key: "${VT_API_KEY}"
+      rate_limit: 4
+      per_minute: 4
+
+    abuseipdb:
+      enabled: true
+      api_key: "${ABUSEIPDB_API_KEY}"
+      rate_limit: 1000
+      per_minute: 1000
+
+    misp:
+      enabled: true
+      url: "${MISP_URL}"
+      api_key: "${MISP_API_KEY}"
+      verify_ssl: true
+      max_lookups_per_minute: 60
+
+  edr:
+    provider: "wazuh"
+    api_url: "http://wazuh:55000"
+    api_key: "${EDR_API_KEY}"
+    enabled: true
+  
+  active_directory:
+    enabled: true
+    ldap_server: "ldap://domain-controller:389"
+    ldap_user: "${LDAP_USER}"
+    ldap_password: "${LDAP_PASSWORD}"
+    base_dn: "dc=domain,dc=local"
+  
+  firewall:
+    enabled: true
+    provider: "iptables"
+    api_key: "${FIREWALL_API_KEY}"
+  
+  notifications:
+    enabled: true
+    method: "slack"
+    email_to: "soc@yourcompany.com"
+    slack_webhook: "${SLACK_WEBHOOK}"
+    pagerduty_key: "${PAGERDUTY_KEY}"
+
+# Asset Criticality
+assets:
+  critical:
+    - "domain_controllers"
+    - "database_servers"
+    - "file_servers"
+    - "pki_servers"
+    - "backup_servers"
+  high:
+    - "mail_servers"
+    - "application_servers"
+    - "dns_servers"
+    - "dhcp_servers"
+  medium:
+    - "workstations"
+  low:
+    - "test_systems"
+    - "development_machines"
+
+# Visualization
+visualization:
+  kibana:
+    enabled: true
+    url: "http://kibana:5601"
+
+  grafana:
+    enabled: true
+    url: "http://grafana:3000"
+    api_key: "${GRAFANA_API_KEY}"
+
+# Testing - requires Caldera/Atomic Red Team deployment
+testing:
+  caldera:
+    enabled: false
+    url: "http://localhost:8888"
+    api_key: "${CALDERA_API_KEY}"
+
+  atomic_red_team:
+    enabled: false
+    interval_hours: 24
+
+# Sigma Rules Configuration
+sigma:
+  enabled: true
+  rules_directory: "detections/sigma/rules"
+  auto_reload: true
+  match_on_event: true
+  min_level: "low"
+
+# MITRE ATT&CK Mapping
+mitre:
+  enabled: true
+  auto_map_rules: true
+  coverage_report: true
+  include_gaps: true
+
+# Community Rules Sharing
+community:
+  enabled: true
+  storage_directory: "detections/community"
+  allow_sharing: true
+  require_approval: false
+  auto_update: true
+  update_interval_hours: 24
+
+# Lightweight Endpoint Agent
+endpoint_agent:
+  enabled: true
+  server_url: "http://chronos-api:8000"
+  collect_interval: 30
+  send_interval: 60
+  buffer_size: 100
+  collect:
+    process_creation: true
+    network_connections: true
+    file_operations: true
+    registry_operations: true
+    authentication: true
+
+# Data Retention
+retention:
+  events_days: 90
+  alerts_days: 365
+  telemetry_days: 30
+
+# Performance
+performance:
+  max_workers: 4
+  batch_size: 1000
+  queue_size: 10000

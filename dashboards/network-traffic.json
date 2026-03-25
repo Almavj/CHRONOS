@@ -1,0 +1,83 @@
+{
+  "dashboard": {
+    "title": "Network Traffic Analysis",
+    "tags": ["chronos", "network", "traffic"],
+    "timezone": "browser",
+    "refresh": "1m",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Connections per Second",
+        "type": "graph",
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+        "targets": [
+          {
+            "expr": "rate(zeek_connections_total[5m])",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Top Talkers by Bytes",
+        "type": "bargauge",
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0},
+        "targets": [
+          {
+            "expr": "topk(10, sum by (src_ip) (rate(zeek_bytes_total[5m])))",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "DNS Queries by Type",
+        "type": "piechart",
+        "gridPos": {"h": 8, "w": 8, "x": 0, "y": 8},
+        "targets": [
+          {
+            "expr": "count by (qtype) (zeek_dns_queries)",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "HTTP User Agents",
+        "type": "table",
+        "gridPos": {"h": 8, "w": 16, "x": 8, "y": 8},
+        "targets": [
+          {
+            "expr": "topk(20, count by (user_agent) (zeek_http_requests))",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Suspicious Ports",
+        "type": "graph",
+        "gridPos": {"h": 8, "w": 12, "x": 0, "y": 16},
+        "targets": [
+          {
+            "expr": "count by (dest_port) (zeek_connections{dangerous_port=\"true\"})",
+            "refId": "A"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "SSL Certificates",
+        "type": "table",
+        "gridPos": {"h": 8, "w": 12, "x": 12, "y": 16},
+        "targets": [
+          {
+            "expr": "count by (certificate_subject) (zeek_ssl)",
+            "refId": "A"
+          }
+        ]
+      }
+    ],
+    "version": 1
+  }
+}

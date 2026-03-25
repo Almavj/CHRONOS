@@ -1,0 +1,126 @@
+# Sysmon Configuration for CHRONOS
+# Advanced threat detection configuration
+
+<Sysmon schemaversion="4.82">
+  <!-- Hashing Algorithms -->
+  <HashAlgorithms>MD5,SHA256,IMPHASH</HashAlgorithms>
+
+  <!-- Event Filtering -->
+  <EventFiltering>
+    <!-- Exclude common false positives -->
+    <RuleGroup name="" groupRelation="or">
+      <!-- Exclude Windows system processes -->
+      <ProcessCreate onmatch="exclude">
+        <Image condition="is">C:\Windows\System32\SearchIndexer.exe</Image>
+        <Image condition="is">C:\Windows\System32\SearchProtocolHost.exe</Image>
+        <Image condition="is">C:\Windows\System32\sihost.exe</Image>
+      </ProcessCreate>
+      
+      <!-- Exclude common Microsoft processes -->
+      <ProcessCreate onmatch="exclude">
+        <Company condition="contains">Microsoft Corporation</Company>
+        <Image condition="begin with">C:\Program Files\Windows Defender</Image>
+      </ProcessCreate>
+    </RuleGroup>
+
+    <!-- DETECTION RULES - Alert on these -->
+    
+    <!-- T1059 - Command and Scripting Interpreter -->
+    <RuleGroup name="Suspicious Scripts" groupRelation="or">
+      <ProcessCreate onmatch="include">
+        <!-- PowerShell -->
+        <ParentImage condition="end with">powershell.exe</ParentImage>
+        <Image condition="contains">powershell.exe</Image>
+        <CommandLine condition="contains any">-enc;-encodedcommand;-windowstyle hidden;-nop;-w hidden</CommandLine>
+        
+        <!-- CMD -->
+        <ParentImage condition="end with">cmd.exe</ParentImage>
+        
+        <!-- Script interpreters -->
+        <Image condition="end with">cscript.exe</Image>
+        <Image condition="end with">wscript.exe</Image>
+        <Image condition="end with">mshta.exe</Image>
+        <Image condition="end with">regsvr32.exe</Image>
+        <Image condition="end with">rundll32.exe</Image>
+      </ProcessCreate>
+    </RuleGroup>
+
+    <!-- T1547 - Boot or Logon Autostart -->
+    <RuleGroup name="Persistence" groupRelation="or">
+      <RegistryEvent onmatch="include">
+        <TargetObject condition="contains any">\Software\Microsoft\Windows\CurrentVersion\Run</TargetObject>
+        <TargetObject condition="contains any">\Software\Microsoft\Windows\CurrentVersion\RunOnce</TargetObject>
+        <TargetObject condition="contains">\Software\Classes\*\shell\open\command</TargetObject>
+        <TargetObject condition="contains">AppInit_DLLs</TargetObject>
+        <TargetObject condition="contains">Services\BITS</TargetObject>
+      </RegistryEvent>
+    </RuleGroup>
+
+    <!-- T1055 - Process Injection -->
+    <RuleGroup name="Process Injection" groupRelation="or">
+      <ProcessAccess onmatch="include">
+        <SourceImage condition="end with">lsass.exe</SourceImage>
+        <SourceImage condition="end with">svchost.exe</SourceImage>
+        <GrantedAccess condition="contains">0x1F0FFF</GrantedAccess>
+        <GrantedAccess condition="contains">0x1F1FFF</GrantedAccess>
+        <GrantedAccess condition="contains">0x143A</GrantedAccess>
+      </ProcessAccess>
+    </RuleGroup>
+
+    <!-- Network Connections -->
+    <RuleGroup name="Network" groupRelation="or">
+      <NetworkConnect onmatch="include">
+        <DestinationPort condition="is">4444</DestinationPort>  <!-- Metasploit -->
+        <DestinationPort condition="is">8080</DestinationPort>
+        <DestinationPort condition="is">8443</DestinationPort>
+        <DestinationPort condition="is">31337</DestinationPort>  <!-- Back orifice -->
+        <DestinationPort condition="is">1337</DestinationPort>  <!-- Common C2 -->
+        <DestinationPort condition="is">4444</DestinationPort>
+        <DestinationPort condition="is">50050</DestinationPort>  <!-- Cobalt Strike -->
+      </NetworkConnect>
+    </RuleGroup>
+
+    <!-- T1078 - Valid Accounts -->
+    <RuleGroup name="Authentication" groupRelation="or">
+      <AccountInfo onmatch="include">
+        <SubjectUserName condition="not empty"></SubjectUserName>
+      </AccountInfo>
+    </RuleGroup>
+
+    <!-- File Creation -->
+    <RuleGroup name="Suspicious Files" groupRelation="or">
+      <FileCreate onmatch="include">
+        <TargetFilename condition="end with">.tmp</TargetFilename>
+        <TargetFilename condition="end with">.tmp.exe</TargetFilename>
+        <TargetFilename condition="end with">.ps1</TargetFilename>
+        <TargetFilename condition="contains">AppData\Local\Temp</TargetFilename>
+        <TargetFilename condition="contains">Public\Downloads</TargetFilename>
+      </FileCreate>
+    </RuleGroup>
+
+    <!-- DNS Queries - Suspicious -->
+    <RuleGroup name="DNS" groupRelation="or">
+      <DnsQuery onmatch="include">
+        <QueryName condition="contains">.xyz</QueryName>
+        <QueryName condition="contains">.top</QueryName>
+        <QueryName condition="contains">.pw</QueryName>
+        <QueryName condition="contains">.cc</QueryName>
+        <QueryName condition="contains">.tk</QueryName>
+        <QueryName condition="contains">.ml</QueryName>
+        <QueryName condition="contains any">temp;test;dev;sandbox</QueryName>
+      </DnsQuery>
+    </RuleGroup>
+
+    <!-- T1021 - Remote Services -->
+    <RuleGroup name="Remote Services" groupRelation="or">
+      <NetworkConnect onmatch="include">
+        <DestinationPort condition="is">445</DestinationPort>  # SMB
+        <DestinationPort condition="is">3389</DestinationPort>  # RDP
+        <DestinationPort condition="is">22</DestinationPort>    # SSH
+        <DestinationPort condition="is">5985</DestinationPort>  # WinRM HTTP
+        <DestinationPort condition="is">5986</DestinationPort>  # WinRM HTTPS
+      </NetworkConnect>
+    </RuleGroup>
+
+  </EventFiltering>
+</Sysmon>

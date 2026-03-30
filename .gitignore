@@ -14,10 +14,10 @@ yarn-error.log
 package-lock.json
 yarn.lock
 
-# Environment files
+# Environment files (exclude .env but keep .env.example)
 .env
-.env.local
-.env.*.local
+.env.*
+!.env.example
 
 # Build outputs
 dist/
@@ -49,7 +49,7 @@ env/
 pip-log.txt
 pip-delete-this-directory.txt
 
-# ML Models (optional - if you want to exclude large models)
+# ML Models (optional - exclude large models)
 models/*.pth
 models/*.pkl
 !models/placeholder_models.py

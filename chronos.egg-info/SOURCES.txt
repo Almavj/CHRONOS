@@ -1,9 +1,0 @@
-README.md
-pyproject.toml
-setup.py
-chronos.egg-info/PKG-INFO
-chronos.egg-info/SOURCES.txt
-chronos.egg-info/dependency_links.txt
-chronos.egg-info/requires.txt
-chronos.egg-info/top_level.txt
-tests/test_suite.py

@@ -1,2 +1,0 @@
-# MISP Requirements
-pymisp>=2.4.150
